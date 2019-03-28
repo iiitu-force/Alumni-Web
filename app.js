@@ -72,6 +72,23 @@ app.get('/view/:branch/:year', isLoggedIn, function(req, res){
 	});
 })
 
+
+app.get('/view/:branch/:year/:id', isLoggedIn, function(req, res){
+    // console.log(req.params.year.substring(2,4))  
+    // console.log("hello")
+    // console.log(req.params.id)
+	User.findById(req.params.id, function(err, foundUser){
+        if(err)
+            console.log(err);
+        else{
+            // console.log(foundUser)
+            console.log("HEllo")
+	        res.render("view", {users : foundUser});
+        }
+	});
+})
+
+
 // AUTH ROUTES
 
 //Register Route
