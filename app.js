@@ -129,7 +129,7 @@ app.get("/logout", function(req, res){
     res.redirect("/");
 })
 
-
+//Log in authentication
 function isLoggedIn(req, res, next){
 	if(req.user)
 		return next();
