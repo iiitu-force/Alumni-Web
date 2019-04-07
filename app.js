@@ -73,16 +73,16 @@ app.get('/view/:branch/:year', isLoggedIn, function(req, res){
 })
 
 
-app.get('/view/:branch/:year/:id', isLoggedIn, function(req, res){
-	User.findById(req.params.id, function(err, foundUser){
-        if(err)
-            console.log(err);
-        else{
-            console.log("HEllo")
-	        res.render("view", {users : foundUser});
-        }
-	});
-})
+// app.get('/view/:branch/:year/:id', isLoggedIn, function(req, res){
+// 	User.findById(req.params.id, function(err, foundUser){
+//         if(err)
+//             console.log(err);
+//         else{
+//             console.log("HEllo")
+// 	        res.render("view", {users : foundUser});
+//         }
+// 	});
+// })
 
 
 // AUTH ROUTES
