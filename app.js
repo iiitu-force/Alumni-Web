@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    PORT = 5000,
+    PORT = process.env.PORT || 5000,
     mongoose = require('mongoose'),
     bodyParser = require('body-parser')
 
@@ -11,7 +11,8 @@ var passport = require("passport"),
 app.set('view engine', 'ejs')
 app.use(express.static("assets"));
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost/alumni_db", { useUnifiedTopology: true, useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/alumni_db", { useUnifiedTopology: true, useNewUrlParser: true});
+mongoose.connect("mongodb+srv://ayushjainrksh:4T14E3nqVfPQMAnW@cluster0-4gaqm.gcp.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true});
 
 //User Model
 var userSchema = new mongoose.Schema({
