@@ -11,7 +11,7 @@ var passport = require("passport"),
 app.set('view engine', 'ejs')
 app.use(express.static("assets"));
 app.use(bodyParser.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost/alumni_db");
+mongoose.connect("mongodb://localhost/alumni_db", { useUnifiedTopology: true, useNewUrlParser: true});
 
 //User Model
 var userSchema = new mongoose.Schema({
