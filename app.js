@@ -62,12 +62,12 @@ app.get('/view/:branch/:year', isLoggedIn, function(req, res){
     else
         fullBranch = 'Information Technology'
 
-    console.log(req.params.year.substring(2,4))
+    // console.log(req.params.year.substring(2,4))
 	User.find({branch: fullBranch, rollNo: {$regex: new RegExp('IIITU' + req.params.year.substring(2,4) + '.*', 'i')} }, function(err, foundUser){
         if(err)
             console.log(err);
         else{
-            console.log(foundUser)
+            // console.log(foundUser)
 	        res.render("view", {users : foundUser});
         }
 	});
